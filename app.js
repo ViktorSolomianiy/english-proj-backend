@@ -22,13 +22,13 @@ app.post("/send-mail", async (req, res) => {
       port: 587,
       secure: false,
       auth: {
-        user: process.env.ADMIN_EMAIL,
-        pass: process.env.ADMIN_PASSWORD,
+        user: "xmegasystem35@gmail.com",
+        pass: "mhplmhfyunxcwrsn",
       },
     });
 
     let mailOptions = {
-      from: process.env.ADMIN_EMAIL,
+      from: "xmegasystem35@gmail.com",
       to: "viktorsolomianiy@gmail.com",
       subject: "Данні учня",
       text: `Name: ${req.body.name}, Email: ${req.body.email}, Phone: ${req.body.phone}, Description: ${req.body.description}`,
