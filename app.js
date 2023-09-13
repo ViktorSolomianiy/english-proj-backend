@@ -11,6 +11,10 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get("/", async (req, res) => {
+  res.json({ message: "Hello" });
+});
+
 app.post("/send-mail", async (req, res) => {
   try {
     let transporter = nodemailer.createTransport({
@@ -29,6 +33,8 @@ app.post("/send-mail", async (req, res) => {
       subject: "Данні учня",
       text: `Name: ${req.body.name}, Email: ${req.body.email}, Phone: ${req.body.phone}, Description: ${req.body.description}`,
     };
+
+    console.log(req.body);
 
     let info = await transporter.sendMail(mailOptions);
 
