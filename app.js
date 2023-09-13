@@ -43,7 +43,7 @@ app.post("/send-mail", async (req, res) => {
     console.error(error);
   }
 
-  res.json({ message: "Hello" });
+  res.json(req.body);
 });
 
 app.listen(3001, () => {
